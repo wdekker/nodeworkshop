@@ -1,0 +1,8 @@
+{
+	"jshint": {
+		"options": {
+			"node": true,
+			"esnext": true
+		}
+	}
+}

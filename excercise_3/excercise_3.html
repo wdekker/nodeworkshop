@@ -1,0 +1,23 @@
+<head>
+  <title>Excercise 3</title>
+</head>
+
+<body>
+  {{> visits}}
+</body>
+
+<template name="visits">
+  {{#if empty}}
+  <h1>No visitors yet, please leave your name</h1>
+  {{else}}
+  <h1>Who was here:</h1>
+  {{/if}}
+  <ul>
+	{{#each visitors}}
+	  <li>{{name}} visited {{visits}} time</li>
+	{{/each}}
+  </ul>
+  <form>
+  Hi, what's your name? <input type="text" name="name" required maxlength="32"> <button>send</button>
+  </form>
+</template>
