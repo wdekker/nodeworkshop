@@ -1,7 +1,6 @@
 "use strict";
 var http = require('http'),
-url = require('url'),
-repository = require('./repository');
+url = require('url');
 var index = require('fs').readFileSync('index.html');
 
 http.createServer(function (req, res) {
@@ -25,9 +24,9 @@ function handleIndex(res) {
 }
 
 function handleName(name, res) {
-	var count = repository.increaseVisits(name);
+	var count = 0;
 	res.writeHead(200, {'Content-Type': 'text/plain'});
-	res.write('Oh hello ' + name + ' this is the ' + count + ' time you have visited us');
+	res.write("Oh hello " + name + ", I don't remember anything so I assume this is the " + count + " time you have visited us.");
 }
 
 console.log('Server running at http://127.0.0.1:1337/');

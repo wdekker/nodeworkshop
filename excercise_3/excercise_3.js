@@ -15,12 +15,6 @@ if (Meteor.isClient) {
 		"submit form": function(event, template) {
 			event.preventDefault();
 			var name = template.find("input").value;
-			var existing = Visitors.findOne({name: name});
-			if (existing) {
-				Visitors.update(existing._id, {$inc: {visits: 1}});
-			} else {
-				Visitors.insert({name: name, visits: 1});
-			}
 		}
 	});
 }
